@@ -8,7 +8,7 @@ AdminPost.init(
 
     date_created: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
       defaultValue: DataTypes.NOW,
     },
     meals: {
@@ -31,7 +31,11 @@ AdminPost.init(
 
   },
   {
-    sequelize
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'adminpost',
   }
 );
 
