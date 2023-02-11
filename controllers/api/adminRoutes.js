@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     const adminAll = await Admin.findAll();
     res.status(200).json(adminAll);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(400).json(err);
   }
 });
 
