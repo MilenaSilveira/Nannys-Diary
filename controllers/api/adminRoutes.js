@@ -21,6 +21,8 @@ router.post('/', async (req, res) => {
         nap_schedule: req.body.nap_schedule,
         child_mood: req.body.child_mood,
         other: req.body.other,
+        child_id: req.body.child_id,
+
 
     });
     res.status(200).json(postData);

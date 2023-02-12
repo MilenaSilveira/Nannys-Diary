@@ -34,9 +34,11 @@ Child.init(
         key: 'id',
       },
     },
+    
   },
   {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'child',
