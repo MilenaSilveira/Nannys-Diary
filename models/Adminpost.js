@@ -28,6 +28,13 @@ AdminPost.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    child_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'child',
+        key: 'id',
+      },
+    },
 
   },
   {

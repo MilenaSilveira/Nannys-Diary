@@ -19,6 +19,7 @@ router.post('/', async (req, res) => {
       diet_restrictions: req.body.diet_restrictions,
       medications: req.body.medications,
       other: req.body.other,
+      user_id: req.body.user_id,
     });
     res.status(200).json(childData);
   } catch (err) {
