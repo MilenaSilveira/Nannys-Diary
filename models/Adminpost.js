@@ -5,7 +5,12 @@ class AdminPost extends Model { }
 
 AdminPost.init(
   {
-
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     date_created: {
       type: DataTypes.DATE,
       allowNull: true,
