@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Comment, User } = require('../models');
+const { Comment, User, Child } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -57,11 +57,19 @@ router.get('/profile', withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       include: [{ model: Comment }],
     });
-
+ const childData = await Child.findAll({
+  where: {
+    user_id: req.session.user_id
+  }
+ })
     const user = userData.get({ plain: true });
+    // const children = childData.get({ plain: true });
+
+console.log(childData)
 
     res.render('profile', {
       ...user,
+      ...childData,
       logged_in: true
     });
   } catch (err) {
