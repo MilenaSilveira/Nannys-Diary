@@ -5,17 +5,18 @@ const userSeed = require('./user');
 
 
 const sequelize = require('../config/connection');
+const { AdminPost } = require('../models');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
   console.log('\n----- DATABASE SYNCED -----\n');
-  await adminSeed();
+  await  userSeed();
   console.log('\n----- ADMIN POST SEEDED -----\n');
-  await commentSeed();
+  await  childSeed();
   console.log('\n----- COMMENT POST SEEDED -----\n');
-  await childSeed();
+  await adminSeed();
   console.log('\n----- CHILD SEEDED -----\n');
-  await userSeed();
+  await commentSeed();
   console.log('\n----- USER SEEDED -----\n');
 
 
