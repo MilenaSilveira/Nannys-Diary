@@ -9,40 +9,40 @@
     <h3>Create child</h3>
 
     <form class="form new-comment-form">
-  
-        <label for="comment-name">child name:</label>
-        <input class="form-input" type="text" id="comment-name" name="comment-name" />
 
-      
-        <label for="comment-funding">???? ($):</label>
-        <input class="form-input" type="number" id="comment-funding" name="comment-funding" />
-  
+      <label for="comment-name">child name:</label>
+      <input class="form-input" type="text" id="comment-name" name="comment-name" />
 
-        <label for="comment-desc">description:</label>
-        <textarea class="form-input" id="comment-desc" name="comment-desc"></textarea>
-   
 
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
+      <label for="comment-funding">???? ($):</label>
+      <input class="form-input" type="number" id="comment-funding" name="comment-funding" />
+
+
+      <label for="comment-desc">description:</label>
+      <textarea class="form-input" id="comment-desc" name="comment-desc"></textarea>
+
+
+      <button type="submit" class="btn btn-primary">Create</button>
   </div>
+  </form>
+</div>
 
-  {{#if comments.length}}
-  <div class="col-md-6 comment-list">
-    <h3>Your child:</h3>
+{{#if comments.length}}
+<div class="col-md-6 comment-list">
+  <h3>Your child:</h3>
 
-    {{#each comments as |comment|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/comment/{{comment.id}}">{{comment.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
-      </div>
+  {{#each comments as |comment|}}
+  <div class="row mb-2">
+    <div class="col-md-8">
+      <h4><a href="/comment/{{comment.id}}">{{comment.name}}</a></h4>
     </div>
-    {{/each}}
+    <div class="col-md-4">
+      <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
+    </div>
   </div>
-  {{/if}}
+  {{/each}}
+</div>
+{{/if}}
 </div>
 
 <script src="./js/profile.js"></script>
