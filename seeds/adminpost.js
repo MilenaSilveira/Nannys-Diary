@@ -7,7 +7,7 @@ const postData = [
     nap_schedule:'took nap for 2 hrs',
     child_mood: 'Happy: Overall good day',
     other: 'n/a',
-    child_id: 01
+    child_id: 1
    
   },
   {
@@ -17,7 +17,7 @@ const postData = [
     nap_schedule:'took nap for 1 hr',
     child_mood: 'A little moody today',
     other: 'n/a',
-    child_id: 02
+    child_id: 2
    
   },
   {
@@ -27,7 +27,7 @@ const postData = [
     nap_schedule:'took nap for 2 hrs',
     child_mood: 'Happy: Overall good day',
     other: 'n/a',
-    child_id: 03
+    child_id: 3
    
   },
   {
@@ -37,7 +37,7 @@ const postData = [
     nap_schedule:'took nap for 1 hr',
     child_mood: 'Was not feeling very well. Had a low fever.',
     other: 'n/a',
-    child_id: 04
+    child_id: 4
    
 
   },

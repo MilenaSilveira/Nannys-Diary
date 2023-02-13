@@ -25,6 +25,10 @@ Comment.belongsTo(User, {
 AdminPost.belongsTo(Child, {
   foreignKey: 'child_id',
 });
+Child.hasMany(AdminPost, {
+  foreignKey: 'child_id',
+  
+});
 
 
 

@@ -34,8 +34,15 @@ Child.init(
         key: 'id',
       },
     },
-    
+    adminpost_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'adminpost',
+        key: 'id',
+      },
+    }
   },
+
   {
     sequelize,
     timestamps: false,
@@ -43,6 +50,7 @@ Child.init(
     underscored: true,
     modelName: 'child',
   }
+ 
 );
 
 module.exports = Child;
