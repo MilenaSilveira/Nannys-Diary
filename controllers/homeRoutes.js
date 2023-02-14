@@ -27,7 +27,9 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/comments/:id', async (req, res) => {
+
+
+router.get('/api/comments/:id', async (req, res) => {
   try {
     const commentData = await Comment.findByPk(req.params.id, {
       include: [
@@ -40,10 +42,7 @@ router.get('/comments/:id', async (req, res) => {
 
     const comment = commentData.get({ plain: true });
 
-    res.render('comment', {
-      ...comment,
-      logged_in: req.session.logged_in
-    });
+    res.status(200).json(comment);
   } catch (err) {
     res.status(500).json(err);
   }
