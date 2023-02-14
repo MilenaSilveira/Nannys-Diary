@@ -40,7 +40,7 @@ const delButtonHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/profile');
       } else {
-        alert('Failed to delete project');
+        alert('Failed to delete child');
       }
     }
   };
@@ -49,6 +49,6 @@ document
   .querySelector('.new-comment-form')
   .addEventListener('submit', newFormHandler);
 
-  // document
-  // .querySelector('.comment-list')
-  // .addEventListener('click', delButtonHandler);
+  document
+  .querySelector('.child-list')
+  .addEventListener('click', delButtonHandler);
