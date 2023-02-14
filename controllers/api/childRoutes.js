@@ -31,11 +31,16 @@ router.post('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const childData = await Child.findByPk(req.params.id);
-    if (!userData) {
+    if (!childData) {
       res.status(404).json({ message: 'No child with this id!' });
       return;
     }
-    res.status(200).json(childData);
+    
+    res.render('comment', {
+      ...childData,
+      // ...childData,
+      logged_in: true
+    });
   } catch (err) {
     res.status(500).json(err);
   }

@@ -4,9 +4,9 @@ const childRoutes = require('./childRoutes');
 const commentRoutes = require('./commentRoutes');
 const userRoutes = require('./userRoutes');
 
-router.use('/user', userRoutes);
-router.use('/comment', commentRoutes);
+router.use('/users', userRoutes);
+router.use('/comments', commentRoutes);
 router.use('/admin', adminRoutes);
-router.use('/child', childRoutes);
+router.use('/childrens', childRoutes);
 
 module.exports = router;
