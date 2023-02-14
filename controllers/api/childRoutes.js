@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
       diet_restrictions: req.body.diet_restrictions,
       medications: req.body.medications,
       other: req.body.other,
-      user_id: req.body.user_id,
+      user_id: req.session.user_id,
     });
     res.status(200).json(childData);
   } catch (err) {
@@ -36,8 +36,10 @@ router.get('/:id', async (req, res) => {
       return;
     }
     
+    const child = childData.get({ plain: true})
+    console.log(child)
     res.render('comment', {
-      ...childData,
+      child,
       // ...childData,
       logged_in: true
     });

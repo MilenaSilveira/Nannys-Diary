@@ -1,10 +1,14 @@
 <div class="text-center">
-  <h2>Childs name:{{user.name}}</h2>
+  <h2>Childs name:{{child.child_name}}</h2>
   <p>Diet:{{child.diet_restrictions}}</p>
-  <p>Medication:{{medication}}</p>
-  <p>Other:{{other}}</p>
+  <p>Medication:{{child.medications}}</p>
+  <p>Other:{{child.other}}</p>
 
-  <p>
-    <button class="btn btn-primary">create a comment</button>
-  </p>
+
+  
+<form class="form new-comment-form">
+  <label for="post">Other:</label>
+  <input class="form-input" type="text" id="post" name="post" />
+  <button class="submitChild" type="submit" class="btn btn-primary">Create</button>
+      </form>
 </div> 
