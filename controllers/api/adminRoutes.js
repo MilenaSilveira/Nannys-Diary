@@ -34,12 +34,16 @@ router.post('/', async (req, res) => {
 // GET one post
 router.get('/:id', async (req, res) => {
   try {
-    const onePost = await Admin.findByPk(req.params.id);
-    if (!onePost) {
+    const adminPost = await Admin.findByPk(req.params.id);
+    if (!adminPost) {
       res.status(404).json({ message: 'No post with this id!' });
       return;
     }
-    res.status(200).json(onePost);
+    res.render('comment', {
+      ...adminPost,
+
+      logged_in: true
+    });
   } catch (err) {
     res.status(500).json(err);
   }
