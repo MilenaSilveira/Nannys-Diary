@@ -1,8 +1,10 @@
 <h1 align="center">Nanny's Diary</h1>
 
+
+
 ![alt](https://img.shields.io/badge/License-MIT-blue) ![alt](https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Ftranquil-falls-34631.herokuapp.com%2Fnotes) 
 
-<p align="center">Tech Blog</p>
+![Photo1](./assets/images/web-developer.gif)
 
 <p align="center">In-Home Daycare</p>
 
