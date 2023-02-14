@@ -9,20 +9,21 @@
     <h3>Create child:{{childData.child_name}}</h3>
 
     <form class="form new-comment-form">
- {{#each childData}}
+ {{!-- {{#each childData}}
       <p for="comment-name">child name:{{childData.child_name}}</p>
       <input class="form-input" type="text" id="comment-name" name="comment-name" />
-    {{/each}}
+    {{/each}} --}}
 
-      <label for="comment-funding">???? ($):</label>
-      <input class="form-input" type="number" id="comment-funding" name="comment-funding" />
-
-
-      <label for="comment-desc">description:</label>
-      <textarea class="form-input" id="comment-desc" name="comment-desc"></textarea>
+      <label for="name">name:</label>
+      <input class="form-input" type="text" id="child-name" name="name" />
 
 
-      <button type="submit" class="btn btn-primary">Create</button>
+      {{!-- <label for="diet">description:</label>
+      <textarea class="form-input" id="child-diet" name="name"></textarea>
+      
+      <input></input> --}}
+
+      <button class="submitChild" type="submit" class="btn btn-primary">Create</button>
   </div>
   </form>
 </div>
@@ -45,4 +46,4 @@
 {{/if}}
 </div>
 
-<script src="./js/profile.js"></script>
+<script src="./js/dashdoor.js"></script>
