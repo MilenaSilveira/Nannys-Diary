@@ -1,49 +1,57 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{user.name}}!</h2>
+    <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create child:{{childData.child_name}}</h3>
+    <h3>Create your child's profile</h3>
 
-    <form class="form new-comment-form">
+   <form class="form new-comment-form">
  {{!-- {{#each childData}}
       <p for="comment-name">child name:{{childData.child_name}}</p>
       <input class="form-input" type="text" id="comment-name" name="comment-name" />
     {{/each}} --}}
 
-      <label for="name">name:</label>
-      <input class="form-input" type="text" id="child-name" name="name" />
+      <label for="child-name">name:</label>
+      <input class="form-input" type="text" id="child-name" name="child-name" />
 
+      <label for="child-restrictions">Child restrictions:</label>
+      <input class="form-input" type="text" id="child-restrictions" name="child-restrictions" />
 
-      {{!-- <label for="diet">description:</label>
-      <textarea class="form-input" id="child-diet" name="name"></textarea>
-      
-      <input></input> --}}
+      <label for="child-medication">Medications:</label>
+      <input class="form-input" type="text" id="child-medication" name="child-medication" />
 
+      <label for="child-other">Other:</label>
+      <input class="form-input" type="text" id="child-other" name="child-other" />
+
+     
       <button class="submitChild" type="submit" class="btn btn-primary">Create</button>
+      </form>
+   
   </div>
-  </form>
-</div>
 
-{{#if comments.length}}
-<div class="col-md-6 comment-list">
-  <h3>Your child:</h3>
+  {{#if children.length}}
+  <div class="col-md-6 project-list">
+    <h3>New comments:</h3>
 
-  {{#each comments as |comment|}}
-  <div class="row mb-2">
-    <div class="col-md-8">
-      <h4><a href="/comment/{{comment.id}}">{{comment.name}}</a></h4>
+    {{#each children as |child|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/api/childrens/{{child.id}}">{{child.child_name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{child.id}}">DELETE</button>
+      </div>
     </div>
-    <div class="col-md-4">
-      <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
-    </div>
+    {{/each}}
   </div>
-  {{/each}}
-</div>
-{{/if}}
+  {{/if}}
 </div>
 
 <script src="./js/dashdoor.js"></script>
+
+
+
+

@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/comment/:id', async (req, res) => {
+router.get('/comments/:id', async (req, res) => {
   try {
     const commentData = await Comment.findByPk(req.params.id, {
       include: [
@@ -55,7 +55,7 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Comment }],
+      include: [{ model: Child }],
     });
  const childData = await Child.findAll({
   where: {
@@ -69,7 +69,7 @@ console.log(childData)
 
     res.render('profile', {
       ...user,
-      ...childData,
+      // ...childData,
       logged_in: true
     });
   } catch (err) {
