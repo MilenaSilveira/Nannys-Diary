@@ -1,18 +1,18 @@
-
-async function commentFormHandler(event) {
+console.log("connected")
+const commentFormHandler = async (event) => {
     event.preventDefault();
 
-    const comment_text = document.querySelector('#post').value.trim();
+    const post_comment = document.querySelector('#post-comment').value.trim();
+console.log("working")
+    // const post_id = window.location.toString().split('/')[
+    //     window.location.toString().split('/').length - 1
+    // ];
 
-    const post_id = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 1
-    ];
-
-    if (comment_text) {
+    if (post_comment) {
         const response = await fetch('/api/comments', {
             method: 'POST',
             body: JSON.stringify({
-                post_comment,post_id
+                post_comment
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -20,13 +20,13 @@ async function commentFormHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/comments');
+            document.location.replace('/comment');
 
         } else {
             alert(response.statusText);
-            document.querySelector('.new-comment-form').style.display = "block";
+            document.querySelector('.new-comment').style.display = "block";
         }
     }
 }
 
-document.querySelector('.new-comment-form').addEventListener('submit', commentFormHandler);
+document.querySelector('.submitComment').addEventListener('click', commentFormHandler);
