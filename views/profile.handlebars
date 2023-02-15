@@ -1,8 +1,4 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
-  </div>
-</div>
+
 
 <div class="container">
     <h1 class="text-center" style="margin-top: 1em;">Welcome, {{name}}</h1>
@@ -29,7 +25,7 @@
             <label for="child-other"></label>
             <input type="text" id="child-other" name="child-other" class="form-control rounded-pill" placeholder="Enter any other relevant information">
           </div> 
-       
+          <button type="submit" class="btn btn-primary rounded-pill" style="margin-top: 20px; margin-bottom: 20px;">Submit</button>
       </div>
     </div>
   </form>
@@ -37,7 +33,7 @@
 
   {{#if children.length}}
   <div class="col-md-6 text-center child-list">
-    <h3>Child's Profile:</h3>
+    <h3 class=>Child's Profile:</h3>
  
 
 {{#each children as |child|}}
