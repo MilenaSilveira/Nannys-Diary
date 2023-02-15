@@ -1,10 +1,15 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
 
-  <div class="container">
+<div class="container">
     <h1 class="text-center" style="margin-top: 1em;">Welcome, {{name}}</h1>
     <div class="d-flex justify-content-center mt-5">
       <div class="half-width-form p-4" style="background-color: #f8f9fa; border: 3px solid rgb(247, 243, 243);">
         <h3>Create your child's profile</h3>
-        <form>
+        <form class="form new-comment-form">
           <div class="form-group">
             <label for="child-name"></label>
             <input type="text" id="child-name" name="child-name" class="form-control rounded-pill" placeholder="Enter name">
@@ -14,26 +19,26 @@
             <label for="child-restrictions"></label>
             <input type="text" id="child-restrictions" name="child-restrictions" class="form-control rounded-pill" placeholder="Enter diet restriction">
           </div>
-    
+
           <div class="form-group">
             <label for="child-medication"></label>
             <input type="text" id="child-medication" name="child-medication" class="form-control rounded-pill" placeholder="Enter medication">
           </div>
-    
+
           <div class="form-group">
             <label for="child-other"></label>
             <input type="text" id="child-other" name="child-other" class="form-control rounded-pill" placeholder="Enter any other relevant information">
           </div> 
-        </form>
+       
       </div>
     </div>
-    </div>
+  </form>
 
 
   {{#if children.length}}
-  <div class="col-md-6 child-list">
+  <div class="col-md-6 text-center child-list">
     <h3>Child's Profile:</h3>
-
+ 
 
 {{#each children as |child|}}
     <div class="row mb-2">
@@ -44,9 +49,12 @@
         <button class="btn btn-sm btn-danger rounded-pill" data-id="{{child.id}}">DELETE</button>
       </div>
     </div>
-{{/each}}
+   {{/each}}
+  </div>
+  {{/if}}
+</div>
 
-<script src="./js/dashdoor.js"></script> 
+<script src="./js/dashdoor.js"></script>
 
 
 

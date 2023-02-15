@@ -42,10 +42,8 @@
 
      {{#if logged_in}}
         <a class="btn btn-outline-primary btn-lg" href="/profile">Profile</a> 
-        <a class="btn btn-outline-primary btn-lg" href="/" id="logout">Logout</a>
-        {{else}}
-        <a href="/login" class="btn btn-outline-primary btn-lg">Login</a>
-        {{!-- <a href="/newprofile">login</a> --}}
+        <button class="no-button" id="logout">logout</button>
+        
         {{/if}}
   </div>
 </div>
@@ -62,5 +60,8 @@
     <p>Phone: 555-555-5555 | Email: <a href="mailto:example@example.com">nanny@nannysdiary.com</a> | Instagram: <a href="https://www.instagram.com/example">@example</a></p>
     <p>© 2023 Nanny's Diary. All Rights Reserved.</p>
   </footer>
+   {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 </html>
