@@ -25,18 +25,16 @@
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav ml-auto">
+
+
+        {{#if logged_in}}
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#people">Reviews</a>
+          <a class="nav-link" href="/profile">Profile</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#info">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#email">Contact</a>
-        </li>
+        {{/if}}
       </ul>
     </div>
     <div>
