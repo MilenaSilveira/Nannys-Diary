@@ -3,7 +3,9 @@
 <!-- Jumbotron header -->
 <div class="jumbotron bg-white text-center">
   <h1>Trusted care at your fingertips.</h1>
+  {{#unless logged_in}}
   <p>Sign up to access your daily report </p> 
+  {{/unless}}
   <div class="mt-4">
     {{#unless logged_in}}
     <a href="/signup" class="btn btn-primary btn-lg mr-3 rounded-pill">Sign Up</a>
