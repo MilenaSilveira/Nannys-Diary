@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Child = require('../../models/Child');
+const {Child, Comment} = require('../../models/');
 
 // GET all children
 router.get('/', async (req, res) => {
@@ -30,17 +30,24 @@ router.post('/', async (req, res) => {
 // GET one child
 router.get('/:id', async (req, res) => {
   try {
+    const commentData = await Comment.findAll({
+      where: {
+        user_id: req.session.user_id
+      }
+    });
+   
+
     const childData = await Child.findByPk(req.params.id);
     if (!childData) {
       res.status(404).json({ message: 'No child with this id!' });
       return;
     }
-    
+    const comments = commentData.map((comment) => comment.get({ plain: true }));
     const child = childData.get({ plain: true})
-    console.log(child)
+    console.log(req.session.user_id)
     res.render('comment', {
       child,
-      // ...childData,
+      comments,
       logged_in: true
     });
   } catch (err) {

@@ -29,6 +29,7 @@ router.get('/', async (req, res) => {
 
 
 
+
 router.get('/api/comments/:id', async (req, res) => {
   try {
     const commentData = await Comment.findByPk(req.params.id, {
