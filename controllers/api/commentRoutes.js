@@ -7,19 +7,26 @@ const withAuth = require('../../utils/auth');
 router.get('/', async (req, res) => {
   try {
     const commentData = await Comment.findAll();
-    res.status(200).json(commentData);
+    const comments = commentData.map((comment) => comment.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('post', { 
+      comments, 
+      logged_in: req.session.logged_in 
+    });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
 router.post('/', withAuth, async (req, res) => {
+  
   try {
     const commentData = await Comment.create({
-      ...req.body,
+      post_comment:req.body.post_comment,
       user_id: req.session.user_id,
     });
-console.log(commentData)
+// console.log(commentData)
     res.status(200).json(commentData);
   } catch (err) {
     res.status(400).json(err);

@@ -20,7 +20,9 @@ console.log("working")
         });
 
         if (response.ok) {
-            document.location.replace('/comment');
+            //don't redirect
+            window.location.reload('')
+    
 
         } else {
             alert(response.statusText);
@@ -29,4 +31,4 @@ console.log("working")
     }
 }
 
-document.querySelector('.submitComment').addEventListener('click', commentFormHandler);
+document.querySelector('.new-comment').addEventListener('click', commentFormHandler);
