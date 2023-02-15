@@ -1,4 +1,4 @@
-<div class="text-center">
+{{!-- <div class="text-center">
   <h2>Childs name:{{child.child_name}}</h2>
   <p>Diet:{{child.diet_restrictions}}</p>
   <p>Medication:{{child.medications}}</p>
@@ -11,6 +11,42 @@
   <input class="form-input" type="text" id="post-comment" name="post-comment" />
   <button class="submitComment" type="submit" class="btn btn-primary">Create</button>
       </form>
-</div> 
+</div>  --}}
+
+<div class="container col-md-6" style="margin-top: 2.5em; background-color: #f8f9fa; border: 3px solid rgb(247, 243, 243);">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2 class="text-center" style="margin-top: 1em;">{{child.child_name}}</h2>
+        
+        <div class="row">
+          <div class="col-md-12">
+            <p><strong>Diet Restriction:</strong></p>
+            <p>{{child.diet_restrictions}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p><strong>Medication:</strong></p>
+            <p>{{child.medications}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p><strong>Other:</strong></p>
+            <p>{{child.other}}</p>
+          </div>
+        </div>
+        
+        <form class="new-comment">
+          <div class="form-group">
+            <textarea class="form-control" id="post-comment" name="post-comment" rows="3" placeholder="Leave a comment:"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary rounded-pill" style="margin-top: 20px; margin-bottom: 20px;">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
 
 <script src="/js/comments.js"></script>
