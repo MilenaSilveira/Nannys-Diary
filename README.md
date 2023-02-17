@@ -50,13 +50,14 @@ Go to the internet, type in Nanny's Dairy Sign Up, create an account and follow 
 
 <br>
 
-![Photo1]()
-![Photo2]()
-![Photo3]()
-![Photo4]()
+🔭 [Deployment Website](https://lit-depths-94534.herokuapp.com/) 🔭
+
+![Photo1](./assets/images/Nannys%20care2.png)
+![Photo1](./assets/images/Nanny's%20Care1.png)
 
 
-🔭 [Deployment Website](https://jonjon50.github.io/Fit-Resolution/) 🔭
+
+
 
 <br>
 
